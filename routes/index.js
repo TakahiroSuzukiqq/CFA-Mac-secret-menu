@@ -2,25 +2,21 @@ var express = require('express');
 var router = express.Router();
 
 const Mac = require('../models/Mac');
+const macController = require('../controllers/macController');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  mac.find()
-    .then(macs => {
-      res.render('index', {
-        title: 'Macs',
-        macs: macs
-      })
-    })
-});
-router.post('/', (req, res) => {
-  const name = req.body.mac_name;
-  let mac = new Mac();
-  mac.name = name;
-  mac.save()
-   .then(() => {
-     res.redirect('/')
-   })
-})
+
+router.get('/', macController.getMacs);
+router.post('/', macController.getNewmacs);
+router.get('/macs/:id/edit', macController.getEditmacs);
+router.post('/macs/:id/edit', macController.postEditmacs);
+router.get('/macs/:id/delete', macController.getDeletemacs);
+
+
+router.get('/macs/api', macController.getMacsApi);
+router.post('/macs/api', macController.getNewmacsApi);
+router.get('/macs/api/:id', macController.getEditmacsApi);
+router.delete('/macs/api/:id', macController.getDeletemacsApi);
+
+
 
 module.exports = router;

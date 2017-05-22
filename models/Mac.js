@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-// destructuring
 const { Schema } = mongoose;
 
 const macSchema = new Schema({
 	name: {
 		type: String,
-		trim: true // name="    Sugar "
+		trim: true
 	},
 	created_at: {
 		type: Date,

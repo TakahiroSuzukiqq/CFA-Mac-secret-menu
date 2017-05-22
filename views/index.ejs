@@ -9,17 +9,19 @@
     <p>Welcome to <%= title %></p>
 
     <form action="/" method="post">
-    	<!-- req.body.ingredient_name -->
 	    <input type="text" name="mac_name">
 	    <input type="submit">
     </form>
 
     <ul>
-    	<% macs.forEach(ingredient => { %>
+    	<% macs.forEach(mac => { %>
     		<li>
           <%= mac.name %>
+            <a href="/macs/<%= mac._id %>/edit">Edit</a>
+            <a href="/macs/<%= mac._id %>/delete">Delete</a>
         </li>
 
     	<% }) %>
     </ul>
+  </body>
 </html>
