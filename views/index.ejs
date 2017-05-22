@@ -7,5 +7,19 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
+
+    <form action="/" method="post">
+    	<!-- req.body.ingredient_name -->
+	    <input type="text" name="mac_name">
+	    <input type="submit">
+    </form>
+
+    <ul>
+    	<% macs.forEach(ingredient => { %>
+    		<li>
+          <%= mac.name %>
+        </li>
+
+    	<% }) %>
+    </ul>
 </html>

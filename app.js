@@ -8,7 +8,18 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+
 var app = express();
+
+//database is called pet-search
+mongoose.connect('mongodb://localhost/secret-menu-search')
+const { connection:db } = mongoose;
+
+db.on('error', console.error.bind(console, 'connection error;'));
+db.once('open', () => {
+  console.log('connected to pet-search database')
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
