@@ -12,10 +12,10 @@ router.post('/macs/:id/edit', macController.postEditmacs);
 router.get('/macs/:id/delete', macController.getDeletemacs);
 
 
-router.get('/macs/api', macController.getMacsApi);
-router.post('/macs/api', macController.getNewmacsApi);
-router.get('/macs/api/:id', macController.getEditmacsApi);
-router.delete('/macs/api/:id', macController.getDeletemacsApi);
+router.get('/api/macs', macController.getMacsApi);
+router.post('/api/macs', macController.getNewmacsApi);
+router.get('/api/macs/:id', macController.getEditmacsApi);
+router.delete('/api/macs/:id', macController.getDeletemacsApi);
 
 
 

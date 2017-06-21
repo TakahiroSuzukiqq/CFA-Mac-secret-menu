@@ -61,7 +61,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //jsonwebtoken
-app.use('/ingredients/api*', authApi);
+app.use('/api*', authApi);
 app.use('/', index);
 app.use('/users', users);
 

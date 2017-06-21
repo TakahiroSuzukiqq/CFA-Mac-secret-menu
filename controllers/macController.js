@@ -15,7 +15,7 @@ exports.getNewmacsApi = (req, res) => {
 	mac.name = name;
 	mac.save()
 		.then(() => {
-			res.redirect('/macs/api')
+			res.redirect('/api/macs')
 		})
 };
 
@@ -29,7 +29,7 @@ exports.getEditmacsApi = (req, res) => {
 exports.getDeletemacsApi = (req, res) => {
 	Mac.findOne({ _id: req.params.id })
     .remove((err, data) => {
-			res.redirect('/macs/api')
+			res.redirect('/api/macs')
 		});
 };
 
