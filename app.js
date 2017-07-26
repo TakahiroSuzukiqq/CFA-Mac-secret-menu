@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -17,7 +19,7 @@ var app = express();
 const authApi = require('./middleware/authApi');
 
 var jwt = require('jsonwebtoken');
-var token = jwt.sign({ email: 'takahirosuzuki.m010@gmail.com' }, 'secretcode');
+var token = jwt.sign({ email: process.env.EMAIL }, 'secretcode');
 console.log(token);
 
 mongoose.connect(process.env.MONGOLAB_URI);

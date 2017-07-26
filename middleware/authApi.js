@@ -11,7 +11,7 @@ const authApi = (req, res, next) => {
   var decoded = jwt.verify(key, 'secretcode');
   console.log(decoded.email)
   let found = false;
-  if (decoded.email === 'takahirosuzuki.m010@gmail.com') {
+  if (decoded.email === process.env.EMAIL) {
     found = true;
   }
 
